@@ -29,7 +29,7 @@
     <abstract>
 		<t>
         This document updates RFC 5761 by clarifying the SDP offer/answer negotiation of
-        RTP and RTCP multiplexing. It makes it clear than an answerer can only include
+        RTP and RTCP multiplexing. It makes it clear that an answerer can only include
         an "a=rtcp-mux" attribute in an SDP answer if the associated SDP offer contained
         an attribute.
     </t>
@@ -42,7 +42,7 @@
             specifies how to multiplex RTP data packets and RTP Control Protocol
             (RTCP) packets on a single UDP port, and how to negotiate usage of
             such multiplexing using the SDP offer/answer mechanism
-            <xref format="default" pageno="false" target="RFC5761"/>, using an
+            <xref format="default" pageno="false" target="RFC3264"/>, using an
             "a=rtcp-mux" attribute. However, the text is unclear on whether an
             answerer is allowed to include the attribute in an answer
             even if the associated offer did not contain an attribute.
@@ -98,11 +98,11 @@ OLD TEXT:
   wishes to multiplex RTP and RTCP onto a single port, it MUST include
   a media-level "a=rtcp-mux" attribute in the answer. The RTP payload
   types used in the answer MUST conform to the rules in Section 4. If
-  the offer does not contain the “a=rtcp-mux” attribute the answerer
+  the offer does not contain the "=rtcp-mux" attribute the answerer
   MUST NOT include an attribute in the answer, and the answerer MUST
   NOT multiplex RTP and RTCP packets on a single port.
 
-  If the answerer includes an “a=rtcp-mux” attribute in the answer, the
+  If the answerer includes an "a=rtcp-mux" attribute in the answer, the
   offerer and answerer MUST multiplex RTP and RTCP packets on a single
   port.
 
@@ -174,6 +174,12 @@ including the RTCP bandwidth.
      The security considerations for RTP and RTCP multiplexing are
      described in RFC 5761. This specification does not impact those
      security considerations.
+	</t>
+	</section>
+
+  <section title="IANA Considerations">
+	<t>
+     This specifcation makes no requests from IANA.
 	</t>
 	</section>
 
